@@ -52,7 +52,7 @@ function pickCard(a, b, c) {
             else {
                 timer = setInterval(hideCard, 1000);
                 console.log('different');
-                messageText("NOT FOUND");
+                messageText("No Match");
             }
         }
         lastcardpicked = b;
@@ -72,6 +72,7 @@ function addMove() {
     const movesText = document.querySelector('.moves');
     movesText.innerHTML = moves;
 }
+//Trying to hide stars per plays 
 function checkScore() {
     if (moves === 10 || moves === 20) {
         hideStar();
@@ -108,7 +109,7 @@ function addTime() {
 function timerX() {
     t = setTimeout(addTime, 1000);
 }
-
+//Trying to put this into a  congradulations modal to show stats star rating, time it took, total moves made and exit button 
 function gameDone() {
     if (gamescore < 0) {
         gamescore = 0;
