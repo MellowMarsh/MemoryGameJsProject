@@ -3,12 +3,12 @@
 
 # Project Goals
   The game randomly shuffles cards
-  Matching Cards
-  Moves
-  Star Rating
-  The Timer stop/start
+  Matches Cards
+  Gives Moves
+  Shows a Star Rating
+  Has a timer: stop/start
   Restart button
-  A Congratulations Popup
+  Gives a Congratulations Popup
   
  # Resources:
    www.udemy.com/javascript-project-learn-to-create-a-memory-game-and-more
