@@ -1,2 +1,3 @@
 # MemoryGameJsProject
-Built a Memory Game from scratch Project for a certification class. I used what i learned and incorporated it into a FEND project.
+Memory Game built from scratch. This project was part of a Javascript certification course. I used what I learned and incorporated my skills into a FEND project.
+
