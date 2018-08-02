@@ -11,7 +11,10 @@
   Gives a Congratulations Popup
   
  # Resources:
-   www.udemy.com/javascript-project-learn-to-create-a-memory-game-and-more
+   Certification Recieved for JS: Javascript-project-learn-to-create-a-memory-game-and-more
+   Created by: Laurance Svekis
+   www.udemy.com
+   
  
    https://stackoverflow.com
  
