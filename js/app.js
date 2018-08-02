@@ -13,6 +13,7 @@ var cardsflippedover = 0
     , minutes = 0
     , hours = 0
     , t, gamescore = 100;
+      moves=0;
 var solutionArray = tileImages.concat(tileImages);
 document.getElementById("gamecontrol").addEventListener("click", startGame);
 fliparray = new Array();
