@@ -114,7 +114,7 @@ function gameDone() {
     if (gamescore < 0) {
         gamescore = 0;
     }
-    messageText("GAME OVER<BR>THANKS for PLAYINGM<BR>You scored = " + gamescore);
+    messageText("Congratulations<BR>THANKS for PLAYING<BR>You scored = " + gamescore);
     buttonmessage.innerHTML = "Click to Play Again";
 }
 
