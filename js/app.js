@@ -73,7 +73,7 @@ function addMove() {
     const movesText = document.querySelector('.moves');
     movesText.innerHTML = moves;
 }
-//Trying to hide stars per plays 
+//Trying to hide stars per plays and show #of moves made
 function checkScore() {
     if (moves === 10 || moves === 20) {
         hideStar();
@@ -110,14 +110,21 @@ function addTime() {
 function timerX() {
     t = setTimeout(addTime, 1000);
 }
-//Trying to put this into a  congradulations modal to show stats star rating, time it took, total moves made and exit button 
+
+
 function gameDone() {
     if (gamescore < 0) {
         gamescore = 0;
-    }
+    }  
+    //I dont really like this.  It needs to be a bootstrap modal popup.  I need to apply the modal from html to javasript but just stuck as to the best way.
     messageText("Congratulations<BR>THANKS for PLAYING<BR>You scored = " + gamescore);
     buttonmessage.innerHTML = "Click to Play Again";
 }
+//Modal has to show stats: moves, time spent, and star Rating
+/*Stuck here!!*/
+$( "#myModal" ).on('shown.bs.modal', function(){
+        alert("Modal Opened!");
+    });
 
 function pickagain() {
     cardsflippedover = 0;
