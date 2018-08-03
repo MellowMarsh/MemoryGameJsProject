@@ -20,22 +20,32 @@ body {
     background: #696969;
     font-family: sans-serif;
 }
+#mytime {
+    text-align: center;
+    font-size: 1.5em;
+}
 
+#gamecontrol {
+  float: right;
+  color:black;
+  background-color:#f9f502;
+    /*display:none;*/
+    font-size: .75em;
+
+}
  .star {
 	margin: 0;
 	padding: 0;
 	display: inline-block;
 	margin: 0 5px 0 0;
+
 }
 
  .star li {
 	list-style: none;
 	display: inline-block;
-}
+  align-items: center;
 
- .restart {
-	float: right;
-	cursor: pointer;
 }
 
 .fa-star {
@@ -49,6 +59,7 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
 #gameboard{
  width: 75%;
   height: 540px;
@@ -76,24 +87,9 @@ text-align: center;
     overflow: hidden;
 }
 
-#gamecontrol {
 
-    /*display:none;*/
-}
 
 .gametile {
     padding: 0 !important;
     margin: 0 !important;
-}
-
-#message {
-    font-size: 1.5em;
-    color:#000000;
-    background: #D9D9D9;
-    text-align: center;
-}
-
-#mytime {
-    text-align: center;
-    font-size: 1.5em;
 }
