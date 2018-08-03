@@ -33,6 +33,9 @@ body {
     font-size: .75em;
 
 }
+.moves{
+  text-align: center;
+}
  .star {
 	margin: 0;
 	padding: 0;
