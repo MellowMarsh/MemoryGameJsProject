@@ -41,6 +41,9 @@ function pickCard(a, b, c) {
                 console.log('same');
                 pickagain();
                 score++;
+                if(tileImages.length >=score){
+                  console.log('END GAME');
+                }
             }
             else {
                 timer = setInterval(hideCard, 1000);
