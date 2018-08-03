@@ -51,7 +51,8 @@ function pickCard(a, b, c) {
         lastcardpicked = b;
     }
 }
-//count moves made a display them in the html
+//count moves made a display TOTAL MOVES and collapse the stars.
+
 //Add move
 
 
