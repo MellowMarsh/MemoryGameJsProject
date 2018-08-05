@@ -21,7 +21,6 @@ sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmez
   <div id="wrapper">
     <header>
       <h1>Memory Match Game</h1>
-
   <div id="mytime">00:00:00</div>
   <span class="moves">Total Moves</span>
   <ul class="star">
@@ -39,6 +38,29 @@ sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmez
           </section>
 </header>
   <div id="gameboard"></div>
+      
+      <!-- Modal Popup-->
+<div class="modal" id="mymodal">
+  <div class= "modal-dialog">
+    <div class="modal content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal">x</button>
+      <h2 class="modal-title">Congratulations</h2>
+    </div>
+      <div class="modal-body">
+      <p><span class="total-moves">Total Moves=</span></p>
+    <p><span class="star-rating">Star Rating=</span></p>
+    <p><span class="total-time">Total Time=</span></p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Play Again!</button>
+    </div>
+    </div><!--end modal content-->
+  </div><!--end.modal-dialog-->
+</div><!--end.modal-->
+
+  <!--End Modal-->
+
 
 
     <!-- JavaScript should be linked to source file -->
