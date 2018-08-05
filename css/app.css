@@ -96,3 +96,14 @@ text-align: center;
     padding: 0 !important;
     margin: 0 !important;
 }
+/*style for Modal*/
+.modal{
+        margin: 70px auto;
+	padding: 20px;
+	background: #ffffff;
+	border-radius: 5px;
+	width: 85%;
+	position: relative;
+	transition: all 5s ease-in-out;
+	font-family: sans-serif;
+}
