@@ -68,7 +68,7 @@ function pickCard(a, b, c) {
 //Add move
 function addMoves(){
     moves++;
-    countmoves.innerHTML = moves;
+    counter.innerHTML = moves;
     //start timer on first click
     if(moves == 1){
        seconds = 0;
