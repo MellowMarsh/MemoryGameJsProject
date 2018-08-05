@@ -2,7 +2,6 @@ var tileImages = ['tile1.jpg', 'tile2.jpg', 'tile3.jpg', 'tile4.jpg', 'tile5.jpg
 var gameboard = document.getElementById("gameboard");
 var buttonmessage = document.getElementById("gamecontrol");
 var mytime = document.getElementById("mytime");
-
 var cardsflippedover = 0;
 var lastcardpicked = -1;
 var timer = '';
@@ -11,6 +10,16 @@ var seconds = 0;
 var mseconds = 0;
 var minutes = 0;
 var hours = 0;
+//move varialbe
+let moves=0;
+let counter= document.querySelector(".moves");
+//variables for star icons
+let stars= document.querySelectorAll(".fa-star");
+//star list
+let starsList=document.querySelector('.start li');
+
+let popup=document.querySelector(".modal")
+
 
 var solutionArray = tileImages.concat(tileImages);
 document.getElementById("gamecontrol").addEventListener("click", startGame);
@@ -43,6 +52,7 @@ function pickCard(a, b, c) {
                 score++;
                 if(tileImages.length >=score){
                   console.log('END GAME');
+                  stopTime();
                 }
             }
             else {
@@ -54,10 +64,9 @@ function pickCard(a, b, c) {
         lastcardpicked = b;
     }
 }
-//I am trying to count moves made and display TOTAL MOVES and collapse the stars.
-
+//count moves made a display them in the html
 //Add move
-function addMoves(i){
+function addMoves(){
     moves++;
     countmoves.innerHTML = moves;
     //start timer on first click
@@ -66,9 +75,9 @@ function addMoves(i){
       mseconds = 0;
        minutes = 0;
        hours = 0;
-        startTimer();
+      startTimer();
     }
-    // setting hide stars based on moves 
+    // setting hide stars based on moves
     if (moves > 6 && moves < 12){
         for( var i= 0; i < 3; i++){
             if(i > 1){
@@ -83,7 +92,7 @@ function addMoves(i){
             }
         }
     }
-}
+  }
 
 
 function addTime() {
@@ -122,6 +131,17 @@ function hideCard() {
     pickagain();
 }
 
+
+//using Bootstrap modall I want to open modal when last card is picked.  The modal needs to show total moves, star rate, and total time.
+
+//function stopTime(){
+  //if( lastcardpicked = b){
+    //clearInterval(interval);
+    //finalTime=mytime.innerHTML;
+//$('#myModal').modal('show');
+//$('#myModal').modal('hide'):
+//}
+//}
 function shuffleArray(d) {
     for (var c = d.length - 1; c > 0; c--) {
         var b = Math.floor(Math.random() * (c + 1));
