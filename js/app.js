@@ -54,9 +54,36 @@ function pickCard(a, b, c) {
         lastcardpicked = b;
     }
 }
-//count moves made a display TOTAL MOVES and collapse the stars.
+//I am trying to count moves made and display TOTAL MOVES and collapse the stars.
 
 //Add move
+function addMoves(i){
+    moves++;
+    countmoves.innerHTML = moves;
+    //start timer on first click
+    if(moves == 1){
+       seconds = 0;
+      mseconds = 0;
+       minutes = 0;
+       hours = 0;
+        startTimer();
+    }
+    // setting hide stars based on moves 
+    if (moves > 6 && moves < 12){
+        for( var i= 0; i < 3; i++){
+            if(i > 1){
+                stars.innerHTML(collapse);
+            }
+        }
+    }
+    else if (moves > 12){
+        for( i= 0; i < 3; i++){
+            if(i > 0){
+                stars[i].style.visibility = "collapse";
+            }
+        }
+    }
+}
 
 
 function addTime() {
