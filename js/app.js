@@ -10,6 +10,7 @@ var seconds = 0;
 var mseconds = 0;
 var minutes = 0;
 var hours = 0;
+var t=0;
 //move varialbe
 let moves=0;
 let counter= document.querySelector(".moves");
@@ -28,6 +29,7 @@ startGame();
 
 function startGame() {
     clearInterval(timer);
+    clearTimeout(t);
     timerX();
     seconds = 0, mseconds = 0, minutes = 0, hours = 0;
     shuffleArray(solutionArray);
