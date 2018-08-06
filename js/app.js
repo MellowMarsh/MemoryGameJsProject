@@ -5,12 +5,13 @@ var mytime = document.getElementById("mytime");
 var cardsflippedover = 0;
 var lastcardpicked = -1;
 var timer = '';
+var clearTimeout="";
 //var score=0;
 var seconds = 0;
 var mseconds = 0;
 var minutes = 0;
 var hours = 0;
-var t=0;
+var t= 0;
 //move varialbe
 let moves=0;
 let counter= document.querySelector(".moves");
@@ -29,11 +30,10 @@ startGame();
 
 function startGame() {
     clearInterval(timer);
-    clearTimeout(t);
-    timerX();
+  timerX();
     seconds = 0, mseconds = 0, minutes = 0, hours = 0;
     shuffleArray(solutionArray);
-    score = 0;
+    //score = 0;
     gameboard.innerHTML = "";
 
     for (var i = 0; i <= ((solutionArray.length) - 1); i++) {
@@ -53,8 +53,8 @@ function pickCard(a, b, c) {
                 pickagain();
                 //score++;
                 //if(tileImages.length >=score){
-                  //console.log('END GAME');
-                 // stopTime();
+                //  console.log('END GAME');{}
+                 stopTimer();
                 //}
             }
             else {
@@ -63,7 +63,7 @@ function pickCard(a, b, c) {
                 //messageText("NO MATCH");
             }
         }
-        lastcardpicked = b;
+        lastcardpicked =b;
     }
 }
 //count moves made a display them in the html
@@ -108,11 +108,11 @@ function addTime() {
         }
     }
     mytime.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
-    timerX();
+   timerX();
 }
 
 function timerX() {
-    t = setTimeout(addTime, 1100);
+t=setTimeout(addTime, 1000);
 }
 
 function pickagain() {
@@ -134,16 +134,17 @@ function hideCard() {
 }
 
 
-//using Bootstrap modall I want to open modal when last card is picked.  The modal needs to show total moves, star rate, and total time.
+//using Bootstrap modal I want to open modal when last card is picked.  The modal needs to show total moves, star rate, and total time.
 
-//function stopTime(){
-  //if( lastcardpicked = b){
-    //clearInterval(interval);
-    //finalTime=mytime.innerHTML;
-//$('#myModal').modal('show');
-//$('#myModal').modal('hide'):
-//}
-//}
+function stopTimer(b){
+
+{
+    clearInterval(timer);
+    finalTime=mytime.innerHTML;
+    $('#myModal').modal('show');
+//$('#mymodal').modal('hide'):
+}
+}
 function shuffleArray(d) {
     for (var c = d.length - 1; c > 0; c--) {
         var b = Math.floor(Math.random() * (c + 1));
