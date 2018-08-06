@@ -5,7 +5,7 @@ var mytime = document.getElementById("mytime");
 var cardsflippedover = 0;
 var lastcardpicked = -1;
 var timer = '';
-var score=0;
+//var score=0;
 var seconds = 0;
 var mseconds = 0;
 var minutes = 0;
@@ -49,11 +49,11 @@ function pickCard(a, b, c) {
             if (fliparray[0] == fliparray[1]) {
                 console.log('same');
                 pickagain();
-                score++;
-                if(tileImages.length >=score){
-                  console.log('END GAME');
-                  stopTime();
-                }
+                //score++;
+                //if(tileImages.length >=score){
+                  //console.log('END GAME');
+                 // stopTime();
+                //}
             }
             else {
                 timer = setInterval(hideCard, 1000);
