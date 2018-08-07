@@ -9,7 +9,7 @@ var second = 0;
 var minute = 0;
 var hour = 0;
 var mytime = document.querySelector("#mytime");
-var interval;
+var time;
 
     moves=0;
     moves.innerHTML=moves;
@@ -80,7 +80,7 @@ function hideCard() {
 
 
 function startTimer(){
-    interval = setInterval(function(){
+    time = setInterval(function(){
         mytime.innerHTML =hour+ "hrs"+ minute+"mins "+second+"secs";
         second++;
         if(second == 60){
