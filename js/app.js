@@ -1,15 +1,16 @@
 var tileImages = ['tile1.jpg', 'tile2.jpg', 'tile3.jpg', 'tile4.jpg', 'tile5.jpg', 'tile6.jpg'];
 var gameboard = document.getElementById("gameboard");
-var buttonmessage = document.getElementById("gamecontrol");
+var button= document.getElementById("gamecontrol");
 var mytime = document.getElementById("mytime");
-var cardsflippedover = 0
-    , lastcardpicked = -1
-    , timer = ''
-    , score= 0
-    , seconds = 0
-    , mseconds = 0
-    , minutes = 0
-    , hours = 0;
+var cardsflippedover = 0;
+var lastcardpicked = -1;
+var cards = '';
+var second = 0;
+var minute = 0;
+var hour = 0;
+var mytime = document.querySelector("#mytime");
+var interval;
+
     moves=0;
     moves.innerHTML=moves;
 
@@ -19,16 +20,20 @@ fliparray = new Array();
 startGame();
 
 function startGame() {
-    clearInterval(timer);
-    timerX();
-    seconds = 0, mseconds = 0, minutes = 0, hours = 0;
+  clearTimeout(cards);
     shuffleArray(solutionArray);
-    score = 0;
     gameboard.innerHTML = "";
-
     for (var i = 0; i <= ((solutionArray.length) - 1); i++) {
         gameboard.innerHTML += '<div class="col-md-3 col-xs-4 gametile"><img id="cardz' + i + '" src="img/back.jpg" onclick="pickCard(\'' + solutionArray[i] + '\',\'' + i + '\',this);return false;" class="flipimage"></div>';
     }
+    //reset timer
+    second = 0;
+    minute = 0;
+    hour = 0;
+    var mytime = document.querySelector("#mytime");
+    mytime.innerHTML = "0 hrs 0 mins 0 secs";
+    startTimer();
+
 }
 
 function pickCard(a, b, c) {
@@ -41,69 +46,25 @@ function pickCard(a, b, c) {
             if (fliparray[0] == fliparray[1]) {
                 console.log('same');
                 pickagain();
-              score++;
+              //score++;
             }
             else {
-                timer = setInterval(hideCard, 1000);
-                //console.log('different');
-                //messageText("NO MATCH");
+                 cards= setTimeout(hideCard, 1000);
+
             }
         }
-        lastcardpicked = b;
+        lastcardpicked ===b;
     }
 }
+
+
 //count moves made a display them in the html
-function addMoves(i){
-    moves++;
-    countmoves.innerHTML = moves;
-    //start timer on first click
-    if(moves == 1){
-       seconds = 0;
-      mseconds = 0;
-       minutes = 0;
-       hours = 0;
-        startTimer();
-    }
-    // setting rates based on moves
-    if (moves > 6 && moves < 12){
-        for( var i= 0; i < 3; i++){
-            if(i > 1){
-                stars.innerHTML(collapse);
-            }
-        }
-    }
-    else if (moves > 12){
-        for( i= 0; i < 3; i++){
-            if(i > 0){
-                stars[i].style.visibility = "collapse";
-            }
-        }
-    }
-}
-
-function addTime() {
-    seconds++;
-    if (seconds >= 60) {
-        seconds = 0;
-        minutes++;
-        if (minutes >= 60) {
-            minutes = 0;
-            hours++;
-        }
-    }
-    mytime.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
-    timerX();
-}
-
-function timerX() {
-    t = setTimeout(addTime, 1100);
-}
 
 function pickagain() {
     cardsflippedover = 0;
     fliparray = [];
     lastcardpicked = -1;
-    clearInterval(timer);
+    clearTimeout(cards);
 }
 
 function hideCard() {
@@ -115,6 +76,25 @@ function hideCard() {
         document.getElementById(fliparray[3]).src = "img/back.jpg";
     }
     pickagain();
+}
+
+
+function startTimer(){
+    interval = setInterval(function(){
+        mytime.innerHTML =hour+ "hrs"+ minute+"mins "+second+"secs";
+        second++;
+        if(second == 60){
+            minute++;
+            second=0;
+        }
+        if(minute == 60){
+            hour++;
+            minute = 0;
+        }
+    },1500);
+}
+function stopTimer(){
+
 }
 
 function shuffleArray(d) {
