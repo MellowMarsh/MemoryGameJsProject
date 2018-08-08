@@ -4,6 +4,7 @@ var button= document.getElementById("gamecontrol");
 var mytime = document.getElementById("mytime");
 var cardsflippedover = 0;
 var lastcardpicked = -1;
+var matches = 0;
 var cards = '';
 var second = 0;
 var minute = 0;
@@ -11,8 +12,13 @@ var hour = 0;
 var mytime = document.querySelector("#mytime");
 var time;
 
-    moves=0;
-    moves.innerHTML=moves;
+var moves=0;
+var movesElement = document.querySelector('.moves');
+movesElement.innerHTML = "Total Moves: " + moves;
+
+var star3=document.getElementById("#star3");
+var star2=document.getElementById("#star2");
+var star1=document.getElementById("#star1");
 
 var solutionArray = tileImages.concat(tileImages);
 document.getElementById("gamecontrol").addEventListener("click", startGame);
@@ -30,6 +36,7 @@ function startGame() {
     second = 0;
     minute = 0;
     hour = 0;
+    matches = 0;
     var mytime = document.querySelector("#mytime");
     mytime.innerHTML = "0 hrs 0 mins 0 secs";
     startTimer();
@@ -45,20 +52,33 @@ function pickCard(a, b, c) {
         if (cardsflippedover == 2) {
             if (fliparray[0] == fliparray[1]) {
                 console.log('same');
-                pickagain();
+                matches++; // increment matches when they find one
+                if (matches >= tileImages.length){
+                    // found all matches
+                    // stop timer
+                    stopTimer();
+                    endGame();
+                    // game over.. update modal and open it from here.
+                    // maybe in an endGame() function, since you have a startGame()
+                    //alert('game over')
+                } else {
+                    pickagain();
+                }
               //score++;
             }
             else {
                  cards= setTimeout(hideCard, 1000);
 
             }
+
+            // after 2 cards flipped over, increment moves counter,
+            // and update movesElement's html
+            moves++;
+            movesElement.innerHTML = "Total Moves: " + moves;
         }
-        lastcardpicked ===b;
+        lastcardpicked = b;
     }
 }
-
-
-//count moves made a display them in the html
 
 function pickagain() {
     cardsflippedover = 0;
@@ -77,11 +97,20 @@ function hideCard() {
     }
     pickagain();
 }
+function starRating(){
+if(moves<=10){
+  star3.classList.push("fa-star");
+}else if (moves>= 12){
+star2.classList.remove("fa-star");
+}else if (moves>=13){
+  star1.classList.remove("fa-star");
+}
 
+}
 
 function startTimer(){
     time = setInterval(function(){
-        mytime.innerHTML =hour+ "hrs"+ minute+"mins "+second+"secs";
+        mytime.innerHTML =hour+ " hrs "+ minute+" mins "+second+" secs";
         second++;
         if(second == 60){
             minute++;
@@ -94,7 +123,11 @@ function startTimer(){
     },1500);
 }
 function stopTimer(){
-
+    clearInterval(time);
+}
+function endGame(){
+  $("myModal").modal('toggle');
+  $("#myModal").modal('show');
 }
 
 function shuffleArray(d) {
