@@ -66,7 +66,7 @@ function pickCard(a, b, c) {
                   stopTimer();
                     // game over.. update modal and open it from here.
                     // maybe in an endGame() function, since you have a startGame()
-                    endGame();
+                    //endGame();this is for the modal not using until figure out how to refresh stars and moves onclick of "gamecontrol"
                     //alert('game over')
                 } else {
                     pickagain();
@@ -80,6 +80,7 @@ function pickCard(a, b, c) {
             // and update movesElement's html
             moves++;
             movesElement.innerHTML = "Total Moves: " + moves;
+         //star rating based on moves
     if (moves > 8 && moves < 12){
         for( i= 0; i < 3; i++){
             if(i > 1){
@@ -102,7 +103,7 @@ function pickCard(a, b, c) {
 
 
 /*function starRating(){
-// setting rates based on moves
+// setting rates based on moves may use this for star rating.
 if (moves > 8 && moves < 12){
     for( i= 0; i < 3; i++){
         if(i > 1){
@@ -154,9 +155,9 @@ function startTimer(){
 function stopTimer(){
     clearInterval(time);
 }
-function endGame(){
+/*function endGame(){
   $("#myModal").modal();
-}
+}*/
 
 function shuffleArray(d) {
     for (var c = d.length - 1; c > 0; c--) {
