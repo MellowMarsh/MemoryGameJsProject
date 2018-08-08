@@ -90,15 +90,27 @@ function pickCard(a, b, c) {
         hour = 0;
         startTimer();
     }
-    starRating();
+    if (moves > 8 && moves < 12){
+        for( i= 0; i < 3; i++){
+            if(i > 1){
+                stars[i].style.visibility = "collapse";
+            }
+        }
+    }
+    else if (moves > 13){
+        for( i= 0; i < 3; i++){
+            if(i > 0){
+                stars[i].style.visibility = "collapse";
+            }
+        }
+    }
 
   }
         lastcardpicked = b;
     }
-
 }
 
-function starRating(){
+/*function starRating(){
 // setting rates based on moves
 if (moves > 8 && moves < 12){
     for( i= 0; i < 3; i++){
@@ -114,7 +126,7 @@ else if (moves > 13){
         }
     }
 }
-}
+}*/
 
 function pickagain() {
     cardsflippedover = 0;
