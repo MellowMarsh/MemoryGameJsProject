@@ -20,10 +20,6 @@ var stars = document.querySelectorAll(".fa-star");
  // stars list
  var starsList = document.querySelectorAll(".stars li");
 
-//var star3=document.getElementById("#star3");
-//var star2=document.getElementById("#star2");
-//var star1=document.getElementById("#star1");
-
 var solutionArray = tileImages.concat(tileImages);
 document.getElementById("gamecontrol").addEventListener("click", startGame);
 fliparray = new Array();
@@ -84,12 +80,6 @@ function pickCard(a, b, c) {
             // and update movesElement's html
             moves++;
             movesElement.innerHTML = "Total Moves: " + moves;
-        if(moves == 1){
-        second = 0;
-        minute = 0;
-        hour = 0;
-        startTimer();
-    }
     if (moves > 8 && moves < 12){
         for( i= 0; i < 3; i++){
             if(i > 1){
@@ -108,7 +98,8 @@ function pickCard(a, b, c) {
   }
         lastcardpicked = b;
     }
-}
+  }
+
 
 /*function starRating(){
 // setting rates based on moves
@@ -164,8 +155,7 @@ function stopTimer(){
     clearInterval(time);
 }
 function endGame(){
-  $("#myModal").modal('toggle');
-  $("#myModal").modal('show');
+  $("#myModal").modal();
 }
 
 function shuffleArray(d) {
