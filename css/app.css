@@ -20,9 +20,10 @@ body {
     background: #696969;
     font-family: sans-serif;
 }
-#mytime {
-    text-align: center;
-    font-size: 1.5em;
+#mytime{
+  text-align: center;
+    font-size: 2em;
+    inline-block
 }
 
 #gamecontrol {
@@ -36,20 +37,18 @@ body {
 .moves{
   text-align: center;
 }
- .star {
-	margin: 0;
-	padding: 0;
-	display: inline-block;
-	margin: 0 5px 0 0;
-
+.scoreboard .stars {
+ margin: 0;
+ padding: 0;
+ display: inline-block;
+ margin: 0 5px 0 0;
 }
 
- .star li {
-	list-style: none;
-	display: inline-block;
-  align-items: center;
-
+.scoreboard .stars li {
+ list-style: none;
+ display: inline-block;
 }
+
 
 .fa-star {
 	color: #f9f502;
@@ -96,9 +95,8 @@ text-align: center;
     padding: 0 !important;
     margin: 0 !important;
 }
-/*style for Modal*/
 .modal{
-        margin: 70px auto;
+  margin: 70px auto;
 	padding: 20px;
 	background: #ffffff;
 	border-radius: 5px;
@@ -106,4 +104,5 @@ text-align: center;
 	position: relative;
 	transition: all 5s ease-in-out;
 	font-family: sans-serif;
+
 }
