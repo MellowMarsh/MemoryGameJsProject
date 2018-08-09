@@ -6,6 +6,7 @@ var cardsflippedover = 0;
 var lastcardpicked = -1;
 var matches = 0;
 var cards = '';
+
 var second = 0;
 var minute = 0;
 var hour = 0;
@@ -15,10 +16,9 @@ var time;
 var moves=0;
 var movesElement = document.querySelector('.moves');
 movesElement.innerHTML = "Total Moves: " + moves;
-// declare variables for star icons
-var stars = document.querySelectorAll(".fa-star");
- // stars list
- var starsList = document.querySelectorAll(".stars li");
+
+var icons = document.querySelectorAll(".fa-star");
+var iconsList = document.querySelectorAll(".icons li");
 
 var solutionArray = tileImages.concat(tileImages);
 document.getElementById("gamecontrol").addEventListener("click", startGame);
@@ -32,12 +32,6 @@ function startGame() {
     for (var i = 0; i <= ((solutionArray.length) - 1); i++) {
         gameboard.innerHTML += '<div class="col-md-3 col-xs-4 gametile"><img id="cardz' + i + '" src="img/back.jpg" onclick="pickCard(\'' + solutionArray[i] + '\',\'' + i + '\',this);return false;" class="flipimage"></div>';
     }
-    //reset moves
-    /*var moves=0;
-    var movesElement = document.querySelector('.moves');
-    for(var i=0; i < stars.length; i++){
-      stars[i].style.visibility="visible";
-    }*/
 
     //reset timer
     second = 0;
@@ -66,7 +60,7 @@ function pickCard(a, b, c) {
                   stopTimer();
                     // game over.. update modal and open it from here.
                     // maybe in an endGame() function, since you have a startGame()
-                    //endGame();this is for the modal not using until figure out how to refresh stars and moves onclick of "gamecontrol"
+                    //endGame();
                     //alert('game over')
                 } else {
                     pickagain();
@@ -80,18 +74,17 @@ function pickCard(a, b, c) {
             // and update movesElement's html
             moves++;
             movesElement.innerHTML = "Total Moves: " + moves;
-         //star rating based on moves
     if (moves > 8 && moves < 12){
         for( i= 0; i < 3; i++){
             if(i > 1){
-                stars[i].style.visibility = "collapse";
+                icons[i].style.visibility = "hidden";
             }
         }
     }
     else if (moves > 13){
         for( i= 0; i < 3; i++){
             if(i > 0){
-                stars[i].style.visibility = "collapse";
+                icons[i].style.visibility = "hidden";
             }
         }
     }
@@ -100,25 +93,6 @@ function pickCard(a, b, c) {
         lastcardpicked = b;
     }
   }
-
-
-/*function starRating(){
-// setting rates based on moves may use this for star rating.
-if (moves > 8 && moves < 12){
-    for( i= 0; i < 3; i++){
-        if(i > 1){
-            stars[i].style.visibility = "collapse";
-        }
-    }
-}
-else if (moves > 13){
-    for( i= 0; i < 3; i++){
-        if(i > 0){
-            stars[i].style.visibility = "collapse";
-        }
-    }
-}
-}*/
 
 function pickagain() {
     cardsflippedover = 0;

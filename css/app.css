@@ -37,14 +37,14 @@ body {
 .moves{
   text-align: center;
 }
-.scoreboard .stars {
+.scoreboard .icons {
  margin: 0;
  padding: 0;
  display: inline-block;
  margin: 0 5px 0 0;
 }
 
-.scoreboard .stars li {
+.scoreboard .icons li {
  list-style: none;
  display: inline-block;
 }
