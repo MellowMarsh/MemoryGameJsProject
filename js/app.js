@@ -33,14 +33,20 @@ function startGame() {
         gameboard.innerHTML += '<div class="col-md-3 col-xs-4 gametile"><img id="cardz' + i + '" src="img/back.jpg" onclick="pickCard(\'' + solutionArray[i] + '\',\'' + i + '\',this);return false;" class="flipimage"></div>';
     }
 
-    //reset timer
+
+    //reset moves
+    moves=0;
+    movesElement.innerHTML = "Total Moves: " + moves;
+
+
+//restart timer
     second = 0;
     minute = 0;
     hour = 0;
-    matches = 0;
     var mytime = document.querySelector("#mytime");
-    mytime.innerHTML = "0 hrs 0 mins 0 secs";
+    mytime.innerHTML =hour+ " hrs "+ minute+" mins "+second+" secs";
     startTimer();
+
 
 }
 
@@ -115,6 +121,7 @@ function hideCard() {
 function startTimer(){
     time = setInterval(function(){
         mytime.innerHTML =hour+ " hrs "+ minute+" mins "+second+" secs";
+
         second++;
         if(second == 60){
             minute++;
