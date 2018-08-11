@@ -1,6 +1,6 @@
 var tileImages = ['tile1.jpg', 'tile2.jpg', 'tile3.jpg', 'tile4.jpg', 'tile5.jpg', 'tile6.jpg'];
 var gameboard = document.getElementById("gameboard");
-var button= document.getElementById("gamecontrol");
+var refresh= document.getElementById("gamecontrol");
 var mytime = document.getElementById("mytime");
 var cardsflippedover = 0;
 var lastcardpicked = -1;
@@ -19,6 +19,8 @@ movesElement.innerHTML = "Total Moves: " + moves;
 
 var icons = document.querySelectorAll(".fa-star");
 var iconsList = document.querySelectorAll(".icons li");
+
+// Get the modal
 
 var solutionArray = tileImages.concat(tileImages);
 document.getElementById("gamecontrol").addEventListener("click", startGame);
@@ -66,7 +68,7 @@ function pickCard(a, b, c) {
                   stopTimer();
                     // game over.. update modal and open it from here.
                     // maybe in an endGame() function, since you have a startGame()
-                    //endGame();
+                    endGame();
                     //alert('game over')
                 } else {
                     pickagain();
@@ -136,9 +138,11 @@ function startTimer(){
 function stopTimer(){
     clearInterval(time);
 }
-/*function endGame(){
+
+function endGame(){
   $("#myModal").modal();
-}*/
+}
+
 
 function shuffleArray(d) {
     for (var c = d.length - 1; c > 0; c--) {
