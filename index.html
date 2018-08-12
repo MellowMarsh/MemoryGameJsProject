@@ -42,17 +42,19 @@ sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmez
   <div id="gameboard"></div>
 
 <!-- Modal Popup-->
-<div class="modal" id="myModal">
+<div class="modal fade" id="myModal" aria-hidden="true">
   <div class= "modal-dialog">
-    <div class="modal content">
+    <div class="modal-content">
       <div class="modal-header">
         <button class="close" type="button" data-dismiss="modal">x</button>
       <h2 class="modal-title">Congratulations</h2>
     </div>
       <div class="modal-body">
-      <p><span class="total-moves">Total Moves=</span></p>
+        <p id="stats"></p>
+        
+      <!--<p><span class="total-moves">Total Moves=</span></p>
     <p><span class="star-rating">Star Rating=</span></p>
-    <p><span class="total-time">Total Time=</span></p>
+    <p><span class="total-time">Total Time=</span></p>-->
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">Play Again!</button>

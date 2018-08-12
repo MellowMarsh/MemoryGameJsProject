@@ -32,7 +32,7 @@ function startGame() {
   shuffleArray(solutionArray);
     gameboard.innerHTML = "";
     for (var i = 0; i <= ((solutionArray.length) - 1); i++) {
-        gameboard.innerHTML += '<div class="col-md-3 col-xs-4 gametile"><img id="cardz' + i + '" src="img/back.jpg" onclick="pickCard(\'' + solutionArray[i] + '\',\'' + i + '\',this);return false;" class="flipimage"></div>';
+    gameboard.innerHTML += '<div class="col-md-3 col-xs-4 gametile"><img id="cardz' + i + '" src="img/back.jpg" onclick="pickCard(\'' + solutionArray[i] + '\',\'' + i + '\',this);return false;" class="flipimage"></div>';
     }
 
 
@@ -140,9 +140,10 @@ function stopTimer(){
 //the star rating is not showing. the buttons are not refreshing the game.
 function endGame(){
 $("#myModal").modal();
-$('#stats').text(`Total Time: ${second} seconds,  Total Moves: ${moves}, Star Rating ${icons[i]}`);
+$('#stats').text(`Total Time:  ${second}  seconds   |   Total Moves:  ${moves}   |   Star Rating `);
 
 }
+
 
 
 function shuffleArray(d) {
