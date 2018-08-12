@@ -18,9 +18,9 @@ var movesElement = document.querySelector('.moves');
 movesElement.innerHTML = "Total Moves: " + moves;
 
 var icons = document.querySelectorAll(".fa-star");
-var iconsList = document.querySelectorAll(".icons li");
+//var iconsList = document.querySelectorAll(".icons li");
 
-// Get the modal
+
 
 var solutionArray = tileImages.concat(tileImages);
 document.getElementById("gamecontrol").addEventListener("click", startGame);
@@ -81,7 +81,10 @@ function pickCard(a, b, c) {
             // and update movesElement's html
             moves++;
             movesElement.innerHTML = "Total Moves: " + moves;
-    if (moves > 8 && moves < 12){
+            iconRate();
+          
+          //pulled the star icons out into a function
+    /*if (moves > 8 && moves < 12){
         for( i= 0; i < 3; i++){
             if(i > 1){
                 icons[i].style.visibility = "hidden";
@@ -94,12 +97,34 @@ function pickCard(a, b, c) {
                 icons[i].style.visibility = "hidden";
             }
         }
-    }
+    }*/
 
   }
         lastcardpicked = b;
     }
   }
+
+//star icon rating function
+function iconRate(){
+      moves;
+      movesElement.innerHTML = "Total Moves: " + moves;
+
+      if (moves > 8 && moves < 12){
+          for( i= 0; i < 3; i++){
+              if(i > 1){
+                  icons[i].style.visibility = "hidden";
+              }
+          }
+      }
+      else if (moves > 13){
+          for( i= 0; i < 3; i++){
+              if(i > 0){
+                  icons[i].style.visibility = "hidden";
+              }
+          }
+      }
+
+    }
 
 function pickagain() {
     cardsflippedover = 0;
@@ -137,10 +162,11 @@ function startTimer(){
 function stopTimer(){
     clearInterval(time);
 }
-//the star rating is not showing. the buttons are not refreshing the game.
+
+//the star rating is not showing the correct rating. the buttons are not refreshing the game.
 function endGame(){
 $("#myModal").modal();
-$('#stats').text(`Total Time:  ${second}  seconds   |   Total Moves:  ${moves}   |   Star Rating `);
+$('#stats').text(`Total Time:  ${second}  seconds   |   Total Moves:  ${moves}   |   Star Rating: ${i} `);
 
 }
 
