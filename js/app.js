@@ -67,7 +67,6 @@ function pickCard(a, b, c) {
                     // stop timer
                   stopTimer();
                     // game over.. update modal and open it from here.
-                    // maybe in an endGame() function, since you have a startGame()
                     endGame();
                     //alert('game over')
                 } else {
@@ -140,7 +139,10 @@ function stopTimer(){
 }
 
 function endGame(){
-  $("#myModal").modal();
+$("#myModal").modal();
+
+//$(".close").bind("click", startGame());
+
 }
 
 
