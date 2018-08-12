@@ -137,11 +137,10 @@ function startTimer(){
 function stopTimer(){
     clearInterval(time);
 }
-
+//the star rating is not showing. the buttons are not refreshing the game.
 function endGame(){
 $("#myModal").modal();
-
-//$(".close").bind("click", startGame());
+$('#stats').text(`Total Time: ${second} seconds,  Total Moves: ${moves}, Star Rating ${icons[i]}`);
 
 }
 
