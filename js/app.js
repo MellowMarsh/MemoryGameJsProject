@@ -82,7 +82,7 @@ function pickCard(a, b, c) {
             // and update movesElement's html
             moves++;
             movesElement.innerHTML = "Total Moves: " + moves;
-            iconRate();
+            
           
           //pulled the star icons out into a function
 
