@@ -94,9 +94,6 @@ function pickCard(a, b, c) {
 
 //star icon rating function
 function iconRate(){
-      moves;
-      movesElement.innerHTML = "Total Moves: " + moves;
-      
     if (moves > 8 && moves < 12){
           for( stars= 0; stars < 3; stars++){
               if(stars > 1){
