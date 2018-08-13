@@ -26,7 +26,7 @@ body {
     inline-block
 }
 
-#gamecontrol {
+#restart {
   float: right;
   color:black;
   background-color:#f9f502;
@@ -78,7 +78,6 @@ body {
 .gametile {
 height: 150px;
 width: 200px;
-border-radius: 25px;
 font-size: 100px;
 text-align: center;
 }
