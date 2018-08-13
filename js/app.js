@@ -153,7 +153,7 @@ function stopTimer(){
 function endGame(){
 $("#myModal").modal();
 $('#stats').text(`Total Time:  ${second}  seconds   |   Total Moves:  ${moves}   |   Star Rating: ${stars}`);
-//$(".close").bind("click", startGame()); Trying to restart/refresh whole game through the buttons.
+//$(".close").bind("click", startGame()); Trying to restart/refresh whole game when buttons are clicked.
 }
 
 
