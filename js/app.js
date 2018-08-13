@@ -1,6 +1,6 @@
 var tileImages = ['tile1.jpg', 'tile2.jpg', 'tile3.jpg', 'tile4.jpg', 'tile5.jpg', 'tile6.jpg'];
 var gameboard = document.getElementById("gameboard");
-var refresh= document.getElementById("gamecontrol");
+var refresh= document.getElementById("restart");
 var mytime = document.getElementById("mytime");
 var cardsflippedover = 0;
 var lastcardpicked = -1;
@@ -17,13 +17,14 @@ var moves=0;
 var movesElement = document.querySelector('.moves');
 movesElement.innerHTML = "Total Moves: " + moves;
 
+var stars;
 var icons = document.querySelectorAll(".fa-star");
 //var iconsList = document.querySelectorAll(".icons li");
 
 
 
 var solutionArray = tileImages.concat(tileImages);
-document.getElementById("gamecontrol").addEventListener("click", startGame);
+document.getElementById("restart").addEventListener("click", startGame);
 fliparray = new Array();
 startGame();
 
@@ -84,20 +85,6 @@ function pickCard(a, b, c) {
             iconRate();
           
           //pulled the star icons out into a function
-    /*if (moves > 8 && moves < 12){
-        for( i= 0; i < 3; i++){
-            if(i > 1){
-                icons[i].style.visibility = "hidden";
-            }
-        }
-    }
-    else if (moves > 13){
-        for( i= 0; i < 3; i++){
-            if(i > 0){
-                icons[i].style.visibility = "hidden";
-            }
-        }
-    }*/
 
   }
         lastcardpicked = b;
@@ -108,23 +95,24 @@ function pickCard(a, b, c) {
 function iconRate(){
       moves;
       movesElement.innerHTML = "Total Moves: " + moves;
-
-      if (moves > 8 && moves < 12){
-          for( i= 0; i < 3; i++){
-              if(i > 1){
-                  icons[i].style.visibility = "hidden";
+      
+    if (moves > 8 && moves < 12){
+          for( stars= 0; stars < 3; stars++){
+              if(stars > 1){
+                  icons[stars].style.visibility = "hidden";
               }
           }
       }
       else if (moves > 13){
-          for( i= 0; i < 3; i++){
-              if(i > 0){
-                  icons[i].style.visibility = "hidden";
+          for( stars= 0; stars < 3; stars++){
+              if(stars > 0){
+                  icons[stars].style.visibility = "hidden";
               }
           }
       }
 
     }
+      
 
 function pickagain() {
     cardsflippedover = 0;
@@ -166,7 +154,7 @@ function stopTimer(){
 //the star rating is not showing the correct rating. the buttons are not refreshing the game.
 function endGame(){
 $("#myModal").modal();
-$('#stats').text(`Total Time:  ${second}  seconds   |   Total Moves:  ${moves}   |   Star Rating: ${i} `);
+$('#stats').text(`Total Time:  ${second}  seconds   |   Total Moves:  ${moves}   |   Star Rating: ${stars} `);
 
 }
 
