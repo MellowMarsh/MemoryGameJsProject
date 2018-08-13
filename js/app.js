@@ -151,13 +151,12 @@ function stopTimer(){
     clearInterval(time);
 }
 
-//the star rating is not showing the correct rating. the buttons are not refreshing the game.
+//The star rating is not showing the correct rate. The buttons are not refreshing the game.
 function endGame(){
 $("#myModal").modal();
-$('#stats').text(`Total Time:  ${second}  seconds   |   Total Moves:  ${moves}   |   Star Rating: ${stars} `);
-
+$('#stats').text(`Total Time:  ${second}  seconds   |   Total Moves:  ${moves}   |   Star Rating: ${stars}`);
+//$(".close").bind("click", startGame()); Trying to restart/refresh whole game through the buttons.
 }
-
 
 
 function shuffleArray(d) {
