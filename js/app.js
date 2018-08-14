@@ -1,6 +1,6 @@
 var tileImages = ['tile1.jpg', 'tile2.jpg', 'tile3.jpg', 'tile4.jpg', 'tile5.jpg', 'tile6.jpg'];
 var gameboard = document.getElementById("gameboard");
-var refresh= document.getElementById("restart");
+var button= document.getElementById("restart");
 var mytime = document.getElementById("mytime");
 var cardsflippedover = 0;
 var lastcardpicked = -1;
