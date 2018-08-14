@@ -1,5 +1,5 @@
 # MemoryGameJsProject
-  Basic Memory Game built from scratch. This project was part of a Javascript certification course. I used what I learned and   incorporated my skills into a FEND project.
+  Basic Memory Game built from scratch. I used what I learned and incorporated my skills into a FEND project.
 
 # Project Goals
   The game randomly shuffles cards,
@@ -10,11 +10,8 @@
   Restart button,
   Gives a Congratulations Popup
   
- # Resources:
-   Certification Recieved for JS: Javascript-project-learn-to-create-a-memory-game-and-more
-   Created by: Laurance Svekis
-   www.udemy.com
-   
- 
-   https://stackoverflow.com
+# Resources:
+  Javascript Course taught by Laurence Svekis: www.udemy.com
+  https://www.w3schools.com/
+  https://stackoverflow.com
  
