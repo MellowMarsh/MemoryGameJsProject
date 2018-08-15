@@ -48,8 +48,10 @@ function startGame() {
 
     //restart timer
     second = 0;
+    //mseconds = 0;
     minute = 0;
     hour = 0;
+    //mytime.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
     mytime.innerHTML = hour + " hrs " + minute + " mins " + second + " secs";
     startTimer();
 
@@ -123,17 +125,18 @@ function hideCard() {
 function startTimer() {
     time = setInterval(function() {
         mytime.innerHTML = hour + " hrs " + minute + " mins " + second + " secs";
+        //mytime.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
 
         second++;
-        if (second == 60) {
+        if (second >= 60) {
             minute++;
             second = 0;
         }
-        if (minute == 60) {
+        if (minute >= 60) {
             hour++;
             minute = 0;
         }
-    }, 1100);
+    }, 1000);
 }
 
 function stopTimer() {
@@ -143,7 +146,7 @@ function stopTimer() {
 //Modal showing the time, moves, and star rating. has two restart options.
 function endGame() {
     $("#myModal").modal();
-    $("#stats").text(`Total Time:  ${second}  seconds    Total Moves:  ${moves}`);
+    $("#stats").text(`Total Time =  ${second} secs      Total Moves =  ${moves}`);
 
     var stars = document.querySelector(".icons").innerHTML;
     document.getElementById("stars").innerHTML = stars;
