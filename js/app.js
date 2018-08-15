@@ -126,24 +126,23 @@ function startTimer() {
     time = setInterval(function() {
         mytime.innerHTML = hour + " hrs " + minute + " mins " + second + " secs";
         //mytime.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
-
         second++;
         if (second >= 60) {
-            minute++;
             second = 0;
+            minute++;
         }
         if (minute >= 60) {
-            hour++;
             minute = 0;
+            hour++;
         }
     }, 1000);
 }
-
+//stop Timer function
 function stopTimer() {
     clearInterval(time);
 }
 
-//Modal showing the time, moves, and star rating. has two restart options.
+//Modal showing the total time, total moves, and star rating. has two restart options.
 function endGame() {
     $("#myModal").modal();
     $("#stats").text(`Total Time =  ${second} secs      Total Moves =  ${moves}`);
