@@ -10,11 +10,10 @@ var cards = '';
 var second = 0;
 var minute = 0;
 var hour = 0;
-var mytime = document.querySelector("#mytime");
 var time;
 
 var moves = 0;
-var movesElement = document.querySelector('.moves');
+var movesElement = document.querySelector(".moves");
 movesElement.innerHTML = "Total Moves: " + moves;
 
 var icons = document.querySelectorAll(".fa-star");
@@ -51,7 +50,6 @@ function startGame() {
     second = 0;
     minute = 0;
     hour = 0;
-    var mytime = document.querySelector("#mytime");
     mytime.innerHTML = hour + " hrs " + minute + " mins " + second + " secs";
     startTimer();
 
@@ -81,36 +79,27 @@ function pickCard(a, b, c) {
                 cards = setTimeout(hideCard, 1000);
 
             }
-            // after 2 cards flipped over, increment moves counter,
+            // after 2 cards flipped over, increment moves counter
             // and update movesElement's html
             moves++;
             movesElement.innerHTML = "Total Moves: " + moves;
-
-            //pulled the star icons out into a function
-
-            iconRate();
-
+           // star rating based on moves
+            if (moves > 9 && moves < 13) {
+                for (i = 0; i < 3; i++) {
+                    if (i > 1) {
+                        icons[i].style.visibility = "hidden";
+                    }
+                }
+            } else if (moves > 14) {
+                for (i = 0; i < 3; i++) {
+                    if (i > 0) {
+                        icons[i].style.visibility = "hidden";
+                    }
+                }
+            }
         }
         lastcardpicked = b;
     }
-}
-
-//star icon rating function
-function iconRate() {
-    if (moves > 8 && moves < 12) {
-        for (i = 0; i < 3; i++) {
-            if (i > 1) {
-                icons[i].style.visibility = "hidden";
-            }
-        }
-    } else if (moves > 13) {
-        for (i = 0; i < 3; i++) {
-            if (i > 0) {
-                icons[i].style.visibility = "hidden";
-            }
-        }
-    }
-
 }
 
 function pickagain() {
@@ -151,13 +140,16 @@ function stopTimer() {
     clearInterval(time);
 }
 
-//The star rating is not showing the correct rate.
+//Modal showing the time, moves, and star rating. has two restart options.
 function endGame() {
     $("#myModal").modal();
-    $("#stats").text(`Total Time:  ${second}  seconds   |   Total Moves:  ${moves}`);
+    $("#stats").text(`Total Time:  ${second}  seconds    Total Moves:  ${moves}`);
 
+    var stars = document.querySelector(".icons").innerHTML;
+    document.getElementById("stars").innerHTML = stars;
 }
 
+//shuffle function
 function shuffleArray(d) {
     for (var c = d.length - 1; c > 0; c--) {
         var b = Math.floor(Math.random() * (c + 1));
