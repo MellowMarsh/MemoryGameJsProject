@@ -11,7 +11,7 @@
   Gives a Congratulations Popup
   
 # Resources:
-  *Udacity:www.udacity.com, 
+  *Udacity:www.udacity.com 
   
   *Javascript Course taught by Laurence Svekis:www.udemy.com
   
