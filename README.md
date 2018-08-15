@@ -1,5 +1,5 @@
 # MemoryGameJsProject
-  Basic Memory Game built from scratch. I used what I learned and incorporated my skills into a FEND project.
+  Basic Memory Game 
 
 # Project Goals
   The game randomly shuffles cards,
@@ -11,7 +11,12 @@
   Gives a Congratulations Popup
   
 # Resources:
-  Javascript Course taught by Laurence Svekis: www.udemy.com
+  *Udacity:www.udacity.com, 
+  
+  *Javascript Course taught by Laurence Svekis:www.udemy.com
+  
+  *The Web Developer Bootcamp:www.udemy.com
+  
   https://www.w3schools.com/
   https://stackoverflow.com
  
