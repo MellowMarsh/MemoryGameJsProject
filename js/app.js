@@ -18,7 +18,6 @@ var movesElement = document.querySelector('.moves');
 movesElement.innerHTML = "Total Moves: " + moves;
 
 var icons = document.querySelectorAll(".fa-star");
-//var iconsList = document.querySelectorAll(".icons li");
 
 var solutionArray = tileImages.concat(tileImages);
 document.getElementById("restart").addEventListener("click", startGame);
@@ -34,6 +33,11 @@ function startGame() {
     for (var i = 0; i <= ((solutionArray.length) - 1); i++) {
         gameboard.innerHTML += '<div class="col-md-3 col-xs-4 gametile"><img id="cardz' + i + '" src="img/back.jpg" onclick="pickCard(\'' + solutionArray[i] + '\',\'' + i + '\',this);return false;" class="flipimage"></div>';
     }
+
+    // reset these when starting over
+    cardsflippedover = 0;
+    lastcardpicked = -1;
+    matches = 0;
 
     //reset moves
     moves = 0;
@@ -147,10 +151,10 @@ function stopTimer() {
     clearInterval(time);
 }
 
-//The star rating is not showing the correct rate. 
+//The star rating is not showing the correct rate.
 function endGame() {
     $("#myModal").modal();
-    $('#stats').text(`Total Time:  ${second}  seconds   |   Total Moves:  ${moves}   |   Star Rating: ${i}`);
+    $("#stats").text(`Total Time:  ${second}  seconds   |   Total Moves:  ${moves}`);
 
 }
 
