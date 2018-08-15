@@ -146,10 +146,11 @@ function stopTimer() {
 function endGame() {
     $("#myModal").modal();
     $("#stats").text(`Total Time =  ${second} secs      Total Moves =  ${moves}`);
+}
 
     var stars = document.querySelector(".icons").innerHTML;
     document.getElementById("stars").innerHTML = stars;
-}
+
 
 //shuffle function
 function shuffleArray(d) {
