@@ -33,7 +33,7 @@ function startGame() {
         gameboard.innerHTML += '<div class="col-md-3 col-xs-4 gametile"><img id="cardz' + i + '" src="img/back.jpg" onclick="pickCard(\'' + solutionArray[i] + '\',\'' + i + '\',this);return false;" class="flipimage"></div>';
     }
 
-    // reset these when starting over
+    //reset cards when starting over
     cardsflippedover = 0;
     lastcardpicked = -1;
     matches = 0;
@@ -85,7 +85,9 @@ function pickCard(a, b, c) {
             // and update movesElement's html
             moves++;
             movesElement.innerHTML = "Total Moves: " + moves;
+           
            // star rating based on moves
+           //help provided by student on slack for star rating mucho thanks..
             if (moves > 9 && moves < 13) {
                 for (i = 0; i < 3; i++) {
                     if (i > 1) {
@@ -103,14 +105,14 @@ function pickCard(a, b, c) {
         lastcardpicked = b;
     }
 }
-
+//this picks cards again
 function pickagain() {
     cardsflippedover = 0;
     fliparray = [];
     lastcardpicked = -1;
     clearTimeout(cards);
 }
-
+//this hides card
 function hideCard() {
     console.log(fliparray);
     if (fliparray[2]) {
@@ -121,7 +123,7 @@ function hideCard() {
     }
     pickagain();
 }
-
+//this starts time
 function startTimer() {
     time = setInterval(function() {
         mytime.innerHTML = hour + " hrs " + minute + " mins " + second + " secs";
@@ -144,14 +146,14 @@ function stopTimer() {
 
 //Modal showing the total time, total moves, and star rating. has two restart options.
 function endGame() {
+    //this opens the modal
     $("#myModal").modal();
-    $("#stats").text(`Total Time =  ${second} secs      Total Moves =  ${moves}`);
-
-
+    //this shows time, and moves
+    $("#stats").text(`Total Time =  ${second} secs Total Moves =  ${moves}`);
+    //this allows star rating to be displayed in modal
     var stars = document.querySelector(".icons").innerHTML;
     document.getElementById("stars").innerHTML = stars;
 }
-
 
 //shuffle function
 function shuffleArray(d) {
