@@ -41,7 +41,8 @@ function startGame() {
     //reset moves
     moves = 0;
     movesElement.innerHTML = "Total Moves: " + moves;
-
+    
+    // reset star icons
     for (var i = 0; i < icons.length; i++) {
         icons[i].style.visibility = "visible";
     }
