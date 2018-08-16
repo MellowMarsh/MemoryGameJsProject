@@ -88,7 +88,7 @@ function pickCard(a, b, c) {
             movesElement.innerHTML = "Total Moves: " + moves;
            
            // star rating based on moves
-           //help provided by student on slack for star rating mucho thanks..
+           //help provided by student on slack for star rating mucho thanks..https://www.w3schools.com/cssref/pr_class_display.asp
             if (moves > 9 && moves < 13) {
                 for (i = 0; i < 3; i++) {
                     if (i > 1) {
