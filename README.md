@@ -1,5 +1,5 @@
 # MemoryGameJsProject
-  Basic Memory Game 
+  This is a simple game built to test a users memory. There's a deck of cards with different tile colores. 
 
 # Project Goals
   The game randomly shuffles cards,
