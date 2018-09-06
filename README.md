@@ -45,6 +45,6 @@
   
   # License
   
-  MIT, check LICENSE.md for details.
+  MIT, check LICENSE for details.
   
  
