@@ -8,7 +8,7 @@
 
      • git clone https://github.com/MellowMarsh/MemoryGameJsProject
    
-  2. Load index.html in your favorite browser.
+  2. Load index.html in your favorite browser. Google Chrome was used to build game.
   3. Play the game
 
 # Instructions:
