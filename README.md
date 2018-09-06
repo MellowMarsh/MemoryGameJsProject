@@ -3,12 +3,12 @@
   This is a simple memory game using javascript built to test a users memory. There is a deck of cards with different           hidden tile colors. 
   
  # Project Goals:
-  • The game randomly shuffles cards,
-  • Matches Cards,
-  • Gives Total Moves,
-  • Shows a Star Rating,
-  • Has a timer: stop/start,
-  • Restart button,
+  • The game randomly shuffles cards
+  • Matches Cards
+  • Gives Total Moves
+  • Shows a Star Rating
+  • Has a timer: stop/start
+  • Restart button
   • Gives a Congratulations Popup
 
 # Installing from Source:
