@@ -1,9 +1,9 @@
 var tileImages = ['tile1.jpg', 'tile2.jpg', 'tile3.jpg', 'tile4.jpg', 'tile5.jpg', 'tile6.jpg'];
 var gameboard = document.getElementById("gameboard");
 var button = document.getElementById("restart");
-var mytime = document.getElementById("mytime");
-var cardsflippedover = 0;
-var lastcardpicked = -1;
+var myTime = document.getElementById("myTime");
+var cardsFlippedOver = 0;
+var lastCardPicked = -1;
 var matches = 0;
 var cards = '';
 
@@ -21,12 +21,13 @@ var icons = document.querySelectorAll(".fa-star");
 var solutionArray = tileImages.concat(tileImages);
 document.getElementById("restart").addEventListener("click", startGame);
 
-fliparray = new Array();
+flipArray = new Array();
 
 startGame();
 
 function startGame() {
-    clearTimeout(cards);
+   clearInterval(time);
+   clearTimeout(cards);
     shuffleArray(solutionArray);
     gameboard.innerHTML = "";
     for (var i = 0; i <= ((solutionArray.length) - 1); i++) {
@@ -34,14 +35,14 @@ function startGame() {
     }
 
     //reset cards when starting over
-    cardsflippedover = 0;
-    lastcardpicked = -1;
+    cardsFlippedOver = 0;
+    lastCardPicked = -1;
     matches = 0;
 
     //reset moves
     moves = 0;
     movesElement.innerHTML = "Total Moves: " + moves;
-    
+
     // reset star icons
     for (var i = 0; i < icons.length; i++) {
         icons[i].style.visibility = "visible";
@@ -53,19 +54,19 @@ function startGame() {
     minute = 0;
     hour = 0;
     //mytime.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
-    mytime.innerHTML = hour + " hrs " + minute + " mins " + second + " secs";
+    myTime.innerHTML = hour + " hrs " + minute + " mins " + second + " secs";
     startTimer();
 
 }
 
 function pickCard(a, b, c) {
-    if (cardsflippedover < 2 && lastcardpicked != b) {
-        fliparray[cardsflippedover] = solutionArray[b];
-        fliparray[(cardsflippedover + 2)] = c.id;
-        cardsflippedover++;
+    if (cardsFlippedOver < 2 && lastCardPicked != b) {
+        flipArray[cardsFlippedOver] = solutionArray[b];
+        flipArray[(cardsFlippedOver + 2)] = c.id;
+        cardsFlippedOver++;
         c.src = 'img/' + solutionArray[b];
-        if (cardsflippedover == 2) {
-            if (fliparray[0] == fliparray[1]) {
+        if (cardsFlippedOver == 2) {
+            if (flipArray[0] == flipArray[1]) {
                 console.log('same');
                 matches++; // increment matches when they find one
                 if (matches >= tileImages.length) {
@@ -76,7 +77,7 @@ function pickCard(a, b, c) {
                     endGame();
                     //alert('game over')
                 } else {
-                    pickagain();
+                    pickAgain();
                 }
             } else {
                 cards = setTimeout(hideCard, 1000);
@@ -86,7 +87,7 @@ function pickCard(a, b, c) {
             // and update movesElement's html
             moves++;
             movesElement.innerHTML = "Total Moves: " + moves;
-           
+
            // star rating based on moves
            //help provided by student on slack for star rating mucho thanks..https://www.w3schools.com/cssref/pr_class_display.asp
             if (moves > 9 && moves < 13) {
@@ -103,31 +104,31 @@ function pickCard(a, b, c) {
                 }
             }
         }
-        lastcardpicked = b;
+        lastCardPicked = b;
     }
 }
 //this picks cards again
-function pickagain() {
-    cardsflippedover = 0;
-    fliparray = [];
-    lastcardpicked = -1;
+function pickAgain() {
+    cardsFlippedOver = 0;
+    flipArray = [];
+    lastCardPicked = -1;
     clearTimeout(cards);
 }
 //this hides card
 function hideCard() {
-    console.log(fliparray);
-    if (fliparray[2]) {
-        document.getElementById(fliparray[2]).src = "img/back.jpg";
+    console.log(flipArray);
+    if (flipArray[2]) {
+        document.getElementById(flipArray[2]).src = "img/back.jpg";
     }
-    if (fliparray[3]) {
-        document.getElementById(fliparray[3]).src = "img/back.jpg";
+    if (flipArray[3]) {
+        document.getElementById(flipArray[3]).src = "img/back.jpg";
     }
-    pickagain();
+    pickAgain();
 }
 //this starts time
 function startTimer() {
     time = setInterval(function() {
-        mytime.innerHTML = hour + " hrs " + minute + " mins " + second + " secs";
+        myTime.innerHTML = hour + " hrs " + minute + " mins " + second + " secs";
         //mytime.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
         second++;
         if (second >= 60) {
@@ -135,6 +136,7 @@ function startTimer() {
             minute++;
         }
         if (minute >= 60) {
+
             minute = 0;
             hour++;
         }
