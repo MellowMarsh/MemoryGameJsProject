@@ -1,8 +1,8 @@
 # MemoryGameJsProject
 
-  This is a simple memory game using javascript built to test a users memory. There is a deck of cards with different           hidden tile colors. 
+  This is a simple memory game using javascript built to test a users memory. There is a deck of cards with different           hidden tile colors. The game has a timer, star rating, and gives total moves made.
 
-# Installing from Source
+# Installing from Source:
 
   1. Clone the following repo:
 
@@ -21,13 +21,21 @@
   
   
 # Resources:
-  •Udacity:www.udacity.com 
+  • Udacity:www.udacity.com 
   
-  •Javascript Course taught by Laurence Svekis:www.udemy.com
+  • Javascript Course taught by Laurence Svekis:www.udemy.com
   
-  •The Web Developer Bootcamp:www.udemy.com
+  • The Web Developer Bootcamp:www.udemy.com
   
-  •https://www.w3schools.com/
-  •https://stackoverflow.com
+  • https://www.w3schools.com/
+  • https://stackoverflow.com
+  
+  # Author
+  
+  • Marshalla Robinson
+  
+  # License
+  
+  MIT, check LICENSE.md for details.
   
  
