@@ -1,6 +1,15 @@
-# MemoryGameJsProject
+ # MemoryGameJsProject
 
-  This is a simple memory game using javascript built to test a users memory. There is a deck of cards with different           hidden tile colors. The game has a timer, star rating, and gives total moves made.
+  This is a simple memory game using javascript built to test a users memory. There is a deck of cards with different           hidden tile colors. 
+  
+ # Project Goals:
+  • The game randomly shuffles cards,
+  • Matches Cards,
+  • Gives Total Moves,
+  • Shows a Star Rating,
+  • Has a timer: stop/start,
+  • Restart button,
+  • Gives a Congratulations Popup
 
 # Installing from Source:
 
