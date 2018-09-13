@@ -20,7 +20,7 @@ body {
     background: #696969;
     font-family: sans-serif;
 }
-#mytime{
+#myTime{
   text-align: center;
     font-size: 2em;
 
@@ -53,7 +53,7 @@ body {
 	color: #f9f502;
 }
 
-#wrapper {
+.container-fluid {
     margin: auto 0;
     display: flex;
     justify-content: center;
@@ -75,10 +75,13 @@ body {
 	margin: 0 0 3em;
 }
 .gametile {
+display: flex;
 height: 150px;
 width: 200px;
 font-size: 100px;
 text-align: center;
+justify-content: center !important;
+align-items: center !important;
 }
 
 .flipimage {
@@ -115,7 +118,7 @@ text-align: center;
     padding: 0;
     border: 1px solid #888;
     width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.2);
 
 }
 
@@ -160,34 +163,53 @@ text-align: center;
   display: flex;
 }
 
-/* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
+/*Responsiveness media query*/
 
-/* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) {
-  .gameboard {
-        max-width: 80%;
-    }
+@media only screen and (max-width: 1200px){
     .gametile{
-    max-width: 50%;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
     }
 
-
+    .gameboard {
+      width: 1000px;
+    }
 }
 
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) {
-  .gameboard {
-        max-width: 100%;
-    }
+
+@media only screen and (max-width: 1000px){
     .gametile{
-
-    max-width: 75%;
+      width: 90px;
+      height: 90px;
+      line-height: 90px;
     }
 
-  }
+    .gameboard {
+      width: 800px;
+    }
+}
 
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) {
+@media only screen and (max-width: 800px){
+    .gametile{
+      width: 70px;
+      height: 70px;
+      line-height: 70px;
+    }
 
-  }
+    .gameboard {
+      width: 500px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .gametile{
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+    }
+
+    .gameboard{
+      width: 300px;
+    }
+}
